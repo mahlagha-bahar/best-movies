@@ -1,6 +1,7 @@
 import { Row, Col, Card, Pagination, Spin } from "antd";
 import React from "react";
 import { useState, useEffect } from "react";
+import HomeHeader from "./components/Home_Header";
 
 const { Meta } = Card;
 export default function Home() {
@@ -21,9 +22,12 @@ export default function Home() {
   useEffect(() => {
     fetchMovies(1);
   }, []);
+
   return (
     <>
       <Spin spinning={loading}>
+        <HomeHeader />
+
         <Row gutter={[16, 16]}>
           {results.map((movie) => (
             <Col key={movie.id} xs={24} sm={12} md={8} lg={6} xl={4}>
