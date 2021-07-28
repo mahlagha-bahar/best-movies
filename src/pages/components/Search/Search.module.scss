@@ -1,0 +1,33 @@
+.root {
+  background-color: #201b39;
+  border-radius: 10px;
+  overflow: hidden;
+  :global {
+    .ant-select {
+      width: 100%;
+    }
+    .ant-select {
+      background: #201b39;
+
+      .ant-select-selector {
+        border-radius: 10px;
+        overflow: hidden;
+      }
+    }
+    .ant-input {
+      background: #201b39;
+      padding: 12px 10px;
+      border: none;
+    }
+    .ant-input-group {
+      border: solid 2px #201b39;
+    }
+    .ant-input-search-button,
+    .ant-input-group-addon {
+      background-color: #201b39;
+    }
+    .ant-input-search-butto {
+      border: none;
+    }
+  }
+}

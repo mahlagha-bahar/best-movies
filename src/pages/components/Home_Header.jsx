@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import React from "react";
 import { Row, Col, Card } from "antd";
-export default function HomeHeader() {
+export default function HomeHeader({ latestMovieData }) {
   const [firstMovie, setFirstMovie] = useState();
   useEffect(() => {
     fetch(

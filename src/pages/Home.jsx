@@ -2,11 +2,13 @@ import { Row, Col, Card, Pagination, Spin } from "antd";
 import React from "react";
 import { useState, useEffect } from "react";
 import HomeHeader from "./components/Home_Header";
+import "../assets/css/global.css";
+import { Link } from "react-router-dom";
 
 const { Meta } = Card;
 export default function Home() {
   const [latestMovieData, setLatestMovieData] = useState({});
-  console.log(latestMovieData);
+
   const { page, results = [], total_page, total_results } = latestMovieData;
   const [loading, setLoading] = useState(false);
 
@@ -31,20 +33,22 @@ export default function Home() {
         <Row gutter={[16, 16]}>
           {results.map((movie) => (
             <Col key={movie.id} xs={24} sm={12} md={8} lg={6} xl={4}>
-              <Card
-                hoverable
-                cover={
-                  <img
-                    alt={movie.original_title}
-                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+              <Link to={`/Home/${movie.id}`}>
+                <Card
+                  hoverable
+                  cover={
+                    <img
+                      alt={movie.original_title}
+                      src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                    />
+                  }
+                >
+                  <Meta
+                    title={movie.original_title}
+                    description="www.instagram.com"
                   />
-                }
-              >
-                <Meta
-                  title={movie.original_title}
-                  description="www.instagram.com"
-                />
-              </Card>
+                </Card>
+              </Link>
             </Col>
           ))}
         </Row>
