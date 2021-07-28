@@ -29,7 +29,7 @@ export default function nav() {
         </Button>
       </Col>
       <Col>
-        {user ? user.username : <Button onClick={handleLogin}>Login</Button>}
+        {user ? user.username : <Button onClick={handleLogin()}>Login</Button>}
       </Col>
     </Row>
   );
