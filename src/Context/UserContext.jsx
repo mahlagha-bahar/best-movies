@@ -1,8 +1,9 @@
 import React from "react";
 import { useState, useEffect, createContext } from "react";
 export const UserContext = createContext({});
+
 export default function UserProvider({ children }) {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState();
   const [sessionId, setSessionId] = useState(getLocaleStorageSessionId);
 
   function getLocaleStorageSessionId() {

@@ -2,7 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Image } from "antd";
 import { Space, Card } from "antd";
-// import { Rate } from 'antd';
+
+import PopularMoviesSwiper from "./PopularMoviesSwiper";
+import { Rate } from "antd";
+import Container from "./components/Container";
+import Credits from "./Credits";
 export default function MoviesPage() {
   const { id } = useParams();
 
@@ -18,31 +22,39 @@ export default function MoviesPage() {
   if (!movie) {
     return <h1>loading..</h1>;
   }
+
   return (
-    <Space direction="vertical">
-      <Card title={movie.title}>
-        <div style={{ width: 250, height: 200 }}>
-          <div className="viewout" style={{ width: 600, height: 200 }}>
-            <img
-              className="viewimage"
-              src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`}
-            />
-            <div className="view" style={{ width: 200, height: 200 }}>
-              <Image
-                width={200}
-                height={200}
-                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+    <Container>
+      <Space direction="vertical">
+        <Card title={movie.title}>
+          <div style={{ width: 250, height: 200 }}>
+            <div className="viewout" style={{ width: 600, height: 200 }}>
+              <img
+                className="viewimage"
+                src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`}
               />
-              ;
+              <div className="view" style={{ width: 200, height: 200 }}>
+                <Image
+                  width={200}
+                  height={200}
+                  src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                />
+                ;
+              </div>
             </div>
           </div>
-        </div>
-      </Card>
-      <Card style={{ width: 600 }}>
-        <div>
-          <p>${movie?.overview}</p>
-        </div>
-      </Card>
-    </Space>
+        </Card>
+        <Card style={{ width: 600 }}>
+          <div>
+            <p>${movie?.overview}</p>
+          </div>
+          <div><Credits ID={id}/></div>
+          <div>
+            <Rate allowHalf defaultValue={movie.vote_average} />
+          </div>
+        </Card>
+        <PopularMoviesSwiper  ID={id} />
+      </Space>
+    </Container>
   );
 }

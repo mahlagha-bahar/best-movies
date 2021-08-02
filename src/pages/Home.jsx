@@ -33,6 +33,7 @@ export default function Home() {
         <Row gutter={[16, 16]}>
           {results.map((movie) => (
             <Col key={movie.id} xs={24} sm={12} md={8} lg={6} xl={4}>
+              
               <Link to={`/Home/${movie.id}`}>
                 <Card
                   hoverable

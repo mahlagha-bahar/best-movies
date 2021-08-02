@@ -50,3 +50,10 @@
 ._root_13vkg_1 {
   border-radius: 10px;
 }
+
+.ant-row {
+  justify-content: space-between;
+}
+.ant-space {
+  width: 100%;
+}
