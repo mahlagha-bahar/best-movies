@@ -10,7 +10,7 @@ export default function SimpleSwiper({ slides }) {
   console.log("slides", slides);
   return (
     <Swiper
-      slidesPerView={3}
+      slidesPerView={5}
       spaceBetween={30}
       pagination={{
         clickable: true,
