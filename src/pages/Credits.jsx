@@ -6,10 +6,7 @@ import { Row, Col, Card } from "antd";
 export default function Credits({ ID }) {
   const [credites, setCredits] = useState({});
   function fetchMovies() {
-    console.log(
-      "sal",
-      `https://api.themoviedb.org/3/movie/${ID}/credits?api_key=86ba05b5b5ef9e6cd98405fff0572996&language=en-US`
-    );
+   
     fetch(
       `https://api.themoviedb.org/3/movie/${ID}/credits?api_key=86ba05b5b5ef9e6cd98405fff0572996&language=en-US`
     )

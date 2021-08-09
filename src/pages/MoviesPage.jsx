@@ -30,36 +30,6 @@ export default function MoviesPage() {
   return (
     <>
       <div>
-        {/* <Space direction="vertical">
-        <Card title={movie.title}>
-          <div style={{ width: 250, height: 200 }}>
-            <div className="viewout" style={{ width: 600, height: 200 }}>
-              <img
-                className="viewimage"
-                src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`}
-              />
-              <div className="view" style={{ width: 200, height: 200 }}>
-                <Image
-                  width={200}
-                  height={200}
-                  src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                />
-                ;
-              </div>
-            </div>
-          </div>
-        </Card>
-        <Card style={{ width: 600 }}>
-          <div>
-            <p>${movie?.overview}</p>
-          </div>
-          <div><Credits ID={id}/></div>
-          <div>
-            <Rate allowHalf defaultValue={movie.vote_average} />
-          </div>
-        </Card>
-        <PopularMoviesSwiper  ID={id} />
-      </Space> */}
         <Row>
           <Col span={8}>
             <img
@@ -73,8 +43,6 @@ export default function MoviesPage() {
           </Col>
           <Col span={16}>
             <img
-              //  width={"100%"}
-              //   height={200}
               src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`}
             />
 
@@ -88,13 +56,8 @@ export default function MoviesPage() {
         <div style={{ marginTop: "30px" }}>
           <Credits ID={id} />
         </div>
-        {/* <div style="text-align:center">
-          <p>Similar Movies</p>
-          <p>{movie.title}</p>
-        </div> */}
 
         <Divider style={{ marginTop: "30px" }}>
-         
           <Title level={2}>Similar Movies</Title>
         </Divider>
         <div style={{ marginTop: "30px" }}>
