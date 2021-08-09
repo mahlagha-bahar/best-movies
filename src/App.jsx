@@ -3,12 +3,15 @@ import { Link, Switch, Route } from "react-router-dom";
 import { Layout, Menu, Breadcrumb, Row, Col } from "antd";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Search from "./pages/components/Search/Search";
+
 import "./assets/css/global.css";
 const { Header, Content, Footer } = Layout;
 import Nav from "./pages/components/Nav";
 import Auth from "./pages/Auth.jsx";
 import MoviesPage from "./pages/MoviesPage";
+
+import Search from "./pages/components/Search/Search";
+
 function App() {
   const [count, setCount] = useState(0);
 
@@ -48,6 +51,15 @@ function App() {
             </Route>
             <Route path="/auth">
               <Auth />
+            </Route>
+            <Route path="/movies/:id">
+              <MoviesPage />
+            </Route>
+            <Route path="/tv-shows/:id">
+              <MoviesPage />
+            </Route>
+            <Route path="/celebrities/:id">
+              <MoviesPage />
             </Route>
           </Switch>
         </div>
